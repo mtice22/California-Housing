@@ -1,0 +1,157 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> data1 <- read.csv(file.choose(),header = T,sep = ",") 
+> str(data1)
+'data.frame':   20640 obs. of  12 variables:
+ $ housing_median_age    : int  41 21 52 52 52 52 52 52 42 52 ...
+ $ population            : int  322 2401 496 558 565 413 1094 1157 1206 1551 ...
+ $ households            : int  126 1138 177 219 259 193 514 647 595 714 ...
+ $ median_income         : num  8.33 8.3 7.26 5.64 3.85 ...
+ $ median_house_value    : int  452600 358500 352100 341300 342200 269700 299200 241400 226700 261100 ...
+ $ rooms_per_household   : num  6.98 6.24 8.29 5.82 6.28 ...
+ $ bedrooms_per_household: num  1.024 0.972 1.073 1.073 1.081 ...
+ $ NEAR.BAY              : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ X.1H.OCEAN            : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ INLAND                : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ ISLAND                : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ NEAR.OCEAN            : int  0 0 0 0 0 0 0 0 0 0 ...
+> modelA<-lm(median_house_value~rooms_per_household+bedrooms_per_household+population+households+median_income+NEAR.BAY+X.1H.OCEAN+INLAND+ISLAND+NEAR.OCEAN,data=data1)
+> summary(modelA)
+
+Call:
+lm(formula = median_house_value ~ rooms_per_household + bedrooms_per_household + 
+    population + households + median_income + NEAR.BAY + X.1H.OCEAN + 
+    INLAND + ISLAND + NEAR.OCEAN, data = data1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-512007  -43517  -11497   28099  836474 
+
+Coefficients: (1 not defined because of singularities)
+                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             87813.499   2191.393  40.072  < 2e-16 ***
+rooms_per_household     -1901.060    410.013  -4.637 3.56e-06 ***
+bedrooms_per_household  12015.835   1800.929   6.672 2.59e-11 ***
+population                -41.252      1.054 -39.126  < 2e-16 ***
+households                124.820      3.117  40.046  < 2e-16 ***
+median_income           37912.316    344.256 110.128  < 2e-16 ***
+NEAR.BAY                  175.781   2030.948   0.087    0.931    
+X.1H.OCEAN             -12874.739   1574.802  -8.175 3.12e-16 ***
+INLAND                 -89866.761   1683.962 -53.366  < 2e-16 ***
+ISLAND                 174075.567  31847.872   5.466 4.66e-08 ***
+NEAR.OCEAN                     NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 71130 on 20630 degrees of freedom
+Multiple R-squared:  0.6202,    Adjusted R-squared:   0.62 
+F-statistic:  3743 on 9 and 20630 DF,  p-value: < 2.2e-16
+
+> model2A<-step(modelA,direction="backward")
+Start:  AIC=461202.4
+median_house_value ~ rooms_per_household + bedrooms_per_household + 
+    population + households + median_income + NEAR.BAY + X.1H.OCEAN + 
+    INLAND + ISLAND + NEAR.OCEAN
+
+
+Step:  AIC=461202.4
+median_house_value ~ rooms_per_household + bedrooms_per_household + 
+    population + households + median_income + NEAR.BAY + X.1H.OCEAN + 
+    INLAND + ISLAND
+
+                         Df  Sum of Sq        RSS    AIC
+- NEAR.BAY                1 3.7904e+07 1.0438e+14 461200
+<none>                                 1.0438e+14 461202
+- rooms_per_household     1 1.0878e+11 1.0449e+14 461222
+- ISLAND                  1 1.5116e+11 1.0454e+14 461230
+- bedrooms_per_household  1 2.2524e+11 1.0461e+14 461245
+- X.1H.OCEAN              1 3.3819e+11 1.0472e+14 461267
+- population              1 7.7458e+12 1.1213e+14 462678
+- households              1 8.1142e+12 1.1250e+14 462746
+- INLAND                  1 1.4410e+13 1.1879e+14 463870
+- median_income           1 6.1367e+13 1.6575e+14 470745
+
+Step:  AIC=461200.5
+median_house_value ~ rooms_per_household + bedrooms_per_household + 
+    population + households + median_income + X.1H.OCEAN + INLAND + 
+    ISLAND
+
+                         Df  Sum of Sq        RSS    AIC
+<none>                                 1.0438e+14 461200
+- rooms_per_household     1 1.0877e+11 1.0449e+14 461220
+- ISLAND                  1 1.5115e+11 1.0454e+14 461228
+- bedrooms_per_household  1 2.2521e+11 1.0461e+14 461243
+- X.1H.OCEAN              1 5.2740e+11 1.0491e+14 461302
+- population              1 7.7643e+12 1.1215e+14 462679
+- households              1 8.1278e+12 1.1251e+14 462746
+- INLAND                  1 2.0724e+13 1.2511e+14 464936
+- median_income           1 6.1382e+13 1.6577e+14 470744
+> summary(model2A)
+
+Call:
+lm(formula = median_house_value ~ rooms_per_household + bedrooms_per_household + 
+    population + households + median_income + X.1H.OCEAN + INLAND + 
+    ISLAND, data = data1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-512013  -43540  -11499   28104  836576 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             87894.223   1982.962  44.325  < 2e-16 ***
+rooms_per_household     -1900.972    410.002  -4.636 3.57e-06 ***
+bedrooms_per_household  12014.596   1800.829   6.672 2.59e-11 ***
+population                -41.256      1.053 -39.174  < 2e-16 ***
+households                124.830      3.115  40.080  < 2e-16 ***
+median_income           37912.765    344.208 110.145  < 2e-16 ***
+X.1H.OCEAN             -12955.456   1268.935 -10.210  < 2e-16 ***
+INLAND                 -89947.043   1405.436 -63.999  < 2e-16 ***
+ISLAND                 173994.950  31833.482   5.466 4.66e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 71130 on 20631 degrees of freedom
+Multiple R-squared:  0.6202,    Adjusted R-squared:   0.62 
+F-statistic:  4211 on 8 and 20631 DF,  p-value: < 2.2e-16
+
+> plot(modelA)
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+> plot(modelA)
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+> plot(modelA)
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+> plot(model2A)
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+Waiting to confirm page change...
+
