@@ -60,7 +60,7 @@ INLAND                 -89866.761   1683.962 -53.366  < 2e-16 ***
 ISLAND                 174075.567  31847.872   5.466 4.66e-08 ***
 NEAR.OCEAN                     NA         NA      NA       NA    
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 71130 on 20630 degrees of freedom
 Multiple R-squared:  0.6202,    Adjusted R-squared:   0.62 
@@ -128,7 +128,7 @@ X.1H.OCEAN             -12955.456   1268.935 -10.210  < 2e-16 ***
 INLAND                 -89947.043   1405.436 -63.999  < 2e-16 ***
 ISLAND                 173994.950  31833.482   5.466 4.66e-08 ***
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 71130 on 20631 degrees of freedom
 Multiple R-squared:  0.6202,    Adjusted R-squared:   0.62 
