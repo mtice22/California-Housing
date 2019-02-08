@@ -12,10 +12,7 @@ Then
 ![picture](California-Housing/1.PNG)
 ## Linear model normal Q-Q plot
 ![picture](California-Housing/2.PNG)
-## Stepwise model residual vs fitted plot
-![picture](California-Housing/3.PNG)
-## Stepwise model normal Q-Q plot
-![picture](California-Housing/4.PNG)
+
 # Description
 | Feature | Description |
 | --- | --- |
