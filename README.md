@@ -3,6 +3,7 @@ Our group was tasked with building a multiple linear regression model to predict
 
 Our visuals included a Residual vs. Fitted and a normal Q-Q plot to check the assumptions made in the multiple linear regression model. The residual vs. fitted model is used to check the linearity assumption based on the shape of a red line. The Normal Q-Q plot checks the expected errors assumption of the multiple linear regression model.
 
+We tested our model with Adjusted R-squared and p-values. 
 
 
 # Graphs
