@@ -9,7 +9,7 @@ Then
 
 # Graphs
 ## Linear model residual vs fitted plot
-![Image description](link-to-image)
+![picture](img/abc.png)
 ## Linear model normal Q-Q plot
 ![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 ## Stepwise model residual vs fitted plot
