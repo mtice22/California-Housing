@@ -9,16 +9,13 @@ Then
 
 # Graphs
 ## Linear model residual vs fitted plot
-
-        California-Housing/1.PNG
-      
-
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 ## Linear model normal Q-Q plot
-
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 ## Stepwise model residual vs fitted plot
-
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 ## Stepwise normal Q-Q plot
-
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 # Description
 | Feature | Description |
 | --- | --- |
