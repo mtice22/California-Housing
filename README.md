@@ -1,5 +1,5 @@
-# California-Housing
-Data-Driven Decision Making final project using R to find a linear regression for California Housing Price data.
+# Introduction
+Our group was tasked with building a multiple linear regression model to predict California housing prices based on the predictor 'median_house_value'.
 
 
 
@@ -17,3 +17,6 @@ Data-Driven Decision Making final project using R to find a linear regression fo
 
 # Used
 R 3.5.1
+
+# Contributors
+Michael Tice, Daniel Shaw, Gurpreet Singh, Vasu Schobit
