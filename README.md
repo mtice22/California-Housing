@@ -13,7 +13,9 @@ Then
         California-Housing/1.PNG
       
 ## Linear model normal Q-Q plot
-![picture](California-Housing/2.PNG)
+
+        California-Housing/2.PNG
+      
 
 # Description
 | Feature | Description |
