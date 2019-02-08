@@ -1,5 +1,9 @@
 # Introduction
-Our group was tasked with building a multiple linear regression model to predict California housing prices based on the predictor 'median_house_value'.
+Our group was tasked with building a multiple linear regression model to predict California housing prices based on the predictor 'median_house_value'. 
+
+Our visuals included a Residual vs. Fitted and a normal Q-Q plot to check the assumptions made in the multiple linear regression model. The residual vs. fitted model is used to check the linearity assumption based on the shape of a red line. The Normal Q-Q plot checks the expected errors assumption of the multiple linear regression model.
+
+Then 
 
 
 
@@ -29,7 +33,7 @@ Our group was tasked with building a multiple linear regression model to predict
 | `median_house_value` | Median house value for households within a block (measured in US Dollars) |
 | `ocean_proximity` | Location of the house w.r.t ocean/sea |
 
-# Used
+# Programs Used
 R 3.5.1
 
 # Contributors
